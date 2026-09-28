@@ -38,4 +38,5 @@ El cliente es el navegador de la persona que visita la web. El servidor es el or
 4. El servidor recibe la solicitud, procesa los datos y responde con el siguiente paso, como la pantalla para elegir entradas.
 5. El navegador muestra esa respuesta y la persona puede continuar con la compra.
 
-<img src="imagenes/4lpsg.png" alt="ESE">
+<img src="imagenes/4lpsg.png" alt="captura1">
+<img src="imagenes/downloadssvg.png" alt="captura2">
