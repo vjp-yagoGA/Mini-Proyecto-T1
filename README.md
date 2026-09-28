@@ -40,3 +40,4 @@ El cliente es el navegador de la persona que visita la web. El servidor es el or
 
 <img src="imagenes/4lpsg.png" alt="captura1">
 <img src="imagenes/downloadssvg.png" alt="captura2">
+<img src="imagenes/error 500.png" alt="captura3">
