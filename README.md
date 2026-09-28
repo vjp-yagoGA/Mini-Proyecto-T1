@@ -1,5 +1,7 @@
 # Mini-Proyecto-T1
 
+<img src="imagenes/captura.png" alt="captura">
+
 ## Análisis de la web
 
 La página (https://alkazarmulticines.com/) redirige a una página de Kinetike donde se puede consultar la cartelera de Cines Alkazar. En ella aparecen películas, salas y horarios. Al seleccionar una sesión, se inicia el proceso para elegir el número de entradas.
