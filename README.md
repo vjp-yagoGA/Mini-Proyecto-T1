@@ -39,4 +39,4 @@ El cliente es el navegador de la persona que visita la web. El servidor es el or
 5. El navegador muestra esa respuesta y la persona puede continuar con la compra.
 
 <img src="imagenes/4lpsg.png" alt="captura1">
-<img src="imagenes/downloadssvg.png" alt="captura2">
+<img src="imagenes/downloadsvg.png" alt="captura2">
