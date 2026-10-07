@@ -19,6 +19,18 @@ function listarTodas() {
   console.table(peliculasConEtiqueta);
 }
 
+function listarPeliculasFamiliares() {
+  const peliculasFamiliares = peliculas.filter(
+    (pelicula) =>
+      pelicula.edadMinima <= 7 &&
+      (pelicula.categoria === "Animacion" || pelicula.categoria === "Comedia")
+  );
+
+  console.log("Peliculas familiares (para todos los publicos o mayores de 7):");
+  console.table(peliculasFamiliares);
+  console.log("Total de peliculas familiares:", peliculasFamiliares.length);
+}
+
 function filtrarPorDuracion(limiteMinutos) {
   if (!Number.isFinite(limiteMinutos) || limiteMinutos < 0) {
     throw new RangeError("El limite debe ser un numero igual o mayor que cero.");
@@ -51,6 +63,7 @@ function contarPorCategoria(categoria) {
 
 // Ejemplos: ejecuta cada funcion con valores distintos en la consola.
 listarTodas();
+listarPeliculasFamiliares();
 console.log("Peliculas de hasta 110 minutos:", filtrarPorDuracion(110));
 console.log("Peliculas de hasta 130 minutos:", filtrarPorDuracion(130));
 console.log("Peliculas de comedia:", contarPorCategoria("comedia"));
