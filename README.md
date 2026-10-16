@@ -1,45 +1,61 @@
-# Mini-Proyecto-T1
+# sprint0
 
 <img src="imagenes/captura.png" alt="captura">
 
 ## Análisis de la web
 
-La página (https://alkazarmulticines.com/) redirige a una página de Kinetike donde se puede consultar la cartelera de Cines Alkazar. En ella aparecen películas, salas y horarios. Al seleccionar una sesión, se inicia el proceso para elegir el número de entradas.
+Es un ejercicio de JavaScript para llevar una lista sencilla de videojuegos y practicar arrays, objetos y funciones.
 
-## ¿Qué partes son frontend?
+## Que guarda cada juego
 
-El frontend es la parte que vemos y usamos desde el navegador. En esta web incluye:
+Hay ocho juegos de ejemplo. Puedes cambiar los datos por juegos que conozcas o que tengas en tu lista.
 
-- La cartelera con los títulos de las películas, su duración y clasificación por edades.
-- La información de las salas y los horarios disponibles.
-- Los enlaces y controles que permiten seleccionar una sesión y continuar con la compra.
-- Las imágenes y el diseño que organizan esa información en pantalla.
+| Dato | Para que sirve |
+| --- | --- |
+| `id` | Numero para encontrar el juego |
+| `titulo` | Nombre del juego |
+| `genero` | Tipo de juego |
+| `plataforma` | Donde se puede jugar |
+| `horasJugadas` | Horas que llevo jugadas |
+| `valoracion` | Nota que le doy, del 1 al 10 |
+| `fechaInicio` | Fecha en la que lo empece |
 
-Por ejemplo, al pulsar un horario, el navegador envía datos de la sesión seleccionada, como la película, el cine, la fecha, la hora y la sala.
+## Que hace
 
-## ¿Qué partes son backend?
+Al abrir `index.html` se ven los ejemplos en la consola del navegador. Desde ahi se pueden probar las funciones:
 
-El backend es la parte que trabaja en el servidor y que normalmente no vemos directamente. En una web de cartelera y entradas, se encarga de tareas como:
+- `listar(juegos)` muestra los juegos.
+- `filtrarJuegos(juegos, 20)` busca los juegos de aventura o simulacion que no pasan de esas horas.
+- `contarPorGenero(juegos, "aventura")` cuenta los juegos de ese genero.
+- `buscarPorTexto(juegos, "ISLA")` busca por nombre o genero, aunque se escriba en mayusculas.
+- `anadir(juegos, juegoNuevo)` añade un juego y devuelve su id.
+- `eliminarPorId(juegos, 99)` devuelve `false` si no encuentra el id.
+- `estadisticas(juegos)` enseña las horas totales, la media y el juego con mas horas.
+- `estadisticas(juegos, "valoracion")` calcula esas estadisticas sobre las valoraciones.
 
-- Obtener y preparar la información de películas, salas y horarios para mostrarla.
-- Recibir la sesión que ha elegido el cliente y continuar el proceso de reserva.
-- Comprobar los datos de la compra y, según el funcionamiento del servicio, gestionar la disponibilidad y las entradas.
+Tambien use un `Set` para ver generos distintos y un `Map` para contarlos.
 
-La página consultada usa direcciones `.aspx` y acciones `WebForm` para continuar desde un horario. Esto sugiere que parte de la web se procesa en el servidor, pero desde fuera no se puede confirmar cómo está programado todo el backend ni qué base de datos utiliza.
+## Sesiones 7 y 8
 
-* `WebForm` formulario que aparece en una página de Internet para que puedas introducir y enviar información.
-* `.aspx` es una extensión que indica que una página web está hecha con tecnología ASP.NET.(Microsoft)
+En `js/app.js` hay comentarios que marcan cada parte:
 
-## Modelo cliente-servidor 
+- Sesion 7, reto 1: datos de los videojuegos.
+- Sesion 7, reto 2: listado con etiqueta, filtro compuesto y recuento con `switch`.
+- Sesion 8, reto 1: lista de la compra con arrays, `Set` y `Map`, dentro de `ejecutarRetoListaCompra()`.
+- Sesion 8, reto 2: busqueda, alta y eliminacion. El listado de S7 tambien sirve como `listar(lista)`.
+- Sesion 8, reto 3: estadisticas.
+- Mejoras opcionales de S8: generos distintos con `Set` y recuento con `Map`.
 
-El cliente es el navegador de la persona que visita la web. El servidor es el ordenador del servicio que responde a las solicitudes.
+El reto 1 de S8 tambien se ejecuta al abrir la pagina y puedes repetirlo desde la consola con `ejecutarRetoListaCompra()`. El trabajo del proyecto y los retos aplicables estan juntos en `js/app.js`. El reto individual de depuracion de S7 se hace aparte; no forma parte de esta aplicacion.
 
-1. El navegador solicita la página de Cines Alkazar al servidor.
-2. El servidor responde con la cartelera y el navegador la muestra. Esa parte visible es el frontend.
-3. La persona elige una película y un horario. El navegador envía esa selección al servidor.
-4. El servidor recibe la solicitud, procesa los datos y responde con el siguiente paso, como la pantalla para elegir entradas.
-5. El navegador muestra esa respuesta y la persona puede continuar con la compra.
+## Como se abre
 
-<img src="imagenes/4lpsg.png" alt="captura1">
-<img src="imagenes/downloadsvg.png" alt="captura2">
-<img src="imagenes/error 500.png" alt="captura3">
+Abre `index.html` en el navegador y luego la consola (F12). La pagina carga `js/app.js`; no hace falta cargar los archivos de practica por separado. La carpeta del proyecto se llama `sprint0`.
+
+## Uso de IA
+
+Use un asistente de IA para ayudarme a cambiar el tema y revisar el codigo. Tengo que revisar los ejemplos, poner mis propios juegos si quiero y asegurarme de que entiendo las funciones antes de entregarlo.
+
+## Trabajo
+
+Trabajo individual.
