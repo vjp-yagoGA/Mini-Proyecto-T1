@@ -1,5 +1,7 @@
 # Videojuegos
 
+El trabajo esta creado encima de otro anterior por lo que los commits que salen en github son de los dos, los mas recientes son los del proyecto requerido.
+
 ## Análisis de la web
 
 Es un ejercicio de JavaScript para llevar una lista sencilla de videojuegos y practicar arrays, objetos y funciones.
