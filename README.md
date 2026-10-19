@@ -1,6 +1,4 @@
-# sprint0
-
-<img src="imagenes/captura.png" alt="captura">
+# Videojuegos
 
 ## Análisis de la web
 

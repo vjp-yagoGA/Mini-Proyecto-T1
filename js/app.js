@@ -6,58 +6,11 @@ const ID_INICIAL = 0;
 const PRIMER_INDICE = 0;
 const ID_NO_ENCONTRADO = -1;
 
-// SESION 8, RETO 1: lista de la compra con arrays, Set y Map.
-function ejecutarRetoListaCompra() {
-  const compra = ["pan", "leche", "huevos", "pan", "tomates", "leche", "pan"];
-
-  console.log("\nSESION 8, RETO 1: lista de la compra");
-  compra.push("aceite");
-  console.log("Lista tras añadir aceite:", compra);
-  console.log("Numero de productos:", compra.length);
-
-  const hayHuevos = compra.includes("huevos");
-  console.log("¿Hay huevos?:", hayHuevos);
-
-  const posicionTomates = compra.indexOf("tomates");
-  console.log("Posicion de tomates:", posicionTomates);
-
-  const indiceHuevos = compra.indexOf("huevos");
-  if (indiceHuevos !== ID_NO_ENCONTRADO) {
-    compra.splice(indiceHuevos, 1);
-  }
-  console.log("Lista tras quitar huevos:", compra);
-
-  const productosDistintos = new Set(compra);
-  console.log("Productos distintos:", productosDistintos);
-  console.log("Cantidad de productos distintos:", productosDistintos.size);
-  console.log("¿Hay leche?:", productosDistintos.has("leche"));
-
-  const unidadesPorProducto = new Map();
-  for (const producto of compra) {
-    const cantidadActual = unidadesPorProducto.get(producto) ?? 0;
-    unidadesPorProducto.set(producto, cantidadActual + 1);
-  }
-
-  console.log("Unidades por producto:");
-  for (const [producto, cantidad] of unidadesPorProducto) {
-    console.log(`${producto}: ${cantidad}`);
-  }
-
-  let vueltas = 0;
-  while (compra.indexOf("pan") !== ID_NO_ENCONTRADO) {
-    compra.splice(compra.indexOf("pan"), 1);
-    vueltas++;
-  }
-
-  console.log("Vueltas para quitar todos los panes:", vueltas);
-  console.log("Lista final:", compra);
-}
-
 // SESION 7, RETO 1: datos de los videojuegos del proyecto.
 const juegos = [
   {
     id: 1,
-    titulo: "La ultima fogata",
+    titulo: "Elden Ring",
     genero: "Aventura",
     plataforma: "PC",
     horasJugadas: 18,
@@ -66,7 +19,7 @@ const juegos = [
   },
   {
     id: 2,
-    titulo: "Taller de robots",
+    titulo: "Farmer Simulator",
     genero: "Simulacion",
     plataforma: "Nintendo Switch",
     horasJugadas: 7,
@@ -75,7 +28,7 @@ const juegos = [
   },
   {
     id: 3,
-    titulo: "Reinos de ceniza",
+    titulo: "Baldurs Gate",
     genero: "Rol",
     plataforma: "PC",
     horasJugadas: 54,
@@ -84,7 +37,7 @@ const juegos = [
   },
   {
     id: 4,
-    titulo: "Isla de bolsillo",
+    titulo: "Clash of Clans",
     genero: "Estrategia",
     plataforma: "Movil",
     horasJugadas: 12,
@@ -93,7 +46,7 @@ const juegos = [
   },
   {
     id: 5,
-    titulo: "Mensajero de las nubes",
+    titulo: "Sonic",
     genero: "Plataformas",
     plataforma: "PlayStation 5",
     horasJugadas: 9,
@@ -102,7 +55,7 @@ const juegos = [
   },
   {
     id: 6,
-    titulo: "Ruta 47",
+    titulo: "Gran Turismo",
     genero: "Conduccion",
     plataforma: "Xbox",
     horasJugadas: 26,
@@ -111,7 +64,7 @@ const juegos = [
   },
   {
     id: 7,
-    titulo: "El archivo perdido",
+    titulo: "Limbo",
     genero: "Aventura",
     plataforma: "PC",
     horasJugadas: 15,
@@ -120,7 +73,7 @@ const juegos = [
   },
   {
     id: 8,
-    titulo: "Huerto lunar",
+    titulo: "Animal Crosing",
     genero: "Simulacion",
     plataforma: "Nintendo Switch",
     horasJugadas: 32,
@@ -181,21 +134,51 @@ function contarPorGenero(lista, genero) {
   }
 }
 
-// MEJORA OPCIONAL DE S8, RETO 2: obtener generos sin repetir con Set.
-function generosDistintos(lista) {
-  return new Set(lista.map((juego) => juego.genero));
-}
+// SESION 8, RETO 1: lista de la compra con arrays, Set y Map.
+function ejecutarRetoListaCompra() {
+  const compra = ["pan", "leche", "huevos", "pan", "tomates", "leche", "pan"];
 
-// MEJORA OPCIONAL DE S8, RETO 2: contar juegos por genero con Map.
-function contarGenerosConMap(lista) {
-  const recuento = new Map();
+  console.log("\nSESION 8, RETO 1: lista de la compra");
+  compra.push("aceite");
+  console.log("Lista tras añadir aceite:", compra);
+  console.log("Numero de productos:", compra.length);
 
-  for (const juego of lista) {
-    const cantidadActual = recuento.get(juego.genero) ?? 0;
-    recuento.set(juego.genero, cantidadActual + 1);
+  const hayHuevos = compra.includes("huevos");
+  console.log("¿Hay huevos?:", hayHuevos);
+
+  const posicionTomates = compra.indexOf("tomates");
+  console.log("Posicion de tomates:", posicionTomates);
+
+  const indiceHuevos = compra.indexOf("huevos");
+  if (indiceHuevos !== ID_NO_ENCONTRADO) {
+    compra.splice(indiceHuevos, 1);
+  }
+  console.log("Lista tras quitar huevos:", compra);
+
+  const productosDistintos = new Set(compra);
+  console.log("Productos distintos:", productosDistintos);
+  console.log("Cantidad de productos distintos:", productosDistintos.size);
+  console.log("¿Hay leche?:", productosDistintos.has("leche"));
+
+  const unidadesPorProducto = new Map();
+  for (const producto of compra) {
+    const cantidadActual = unidadesPorProducto.get(producto) ?? 0;
+    unidadesPorProducto.set(producto, cantidadActual + 1);
   }
 
-  return recuento;
+  console.log("Unidades por producto:");
+  for (const [producto, cantidad] of unidadesPorProducto) {
+    console.log(`${producto}: ${cantidad}`);
+  }
+
+  let vueltas = 0;
+  while (compra.indexOf("pan") !== ID_NO_ENCONTRADO) {
+    compra.splice(compra.indexOf("pan"), 1);
+    vueltas++;
+  }
+
+  console.log("Vueltas para quitar todos los panes:", vueltas);
+  console.log("Lista final:", compra);
 }
 
 // SESION 8, RETO 2: buscar por titulo o genero sin distinguir mayusculas.
@@ -283,17 +266,12 @@ if (typeof window !== "undefined") {
     listar,
     filtrarJuegos,
     contarPorGenero,
-    generosDistintos,
-    contarGenerosConMap,
     buscarPorTexto,
     anadir,
     eliminarPorId,
     estadisticas
   });
 }
-
-// SESION 8, RETO 1: ejecutar el ejercicio individual de la lista de la compra.
-ejecutarRetoListaCompra();
 
 // SESION 7, RETOS 1 Y 2: ejemplos de los listados y el filtro con dos limites.
 console.log("Mi lista de videojuegos:");
@@ -306,13 +284,14 @@ console.log("Encontrados:", filtrarJuegos(juegos, HORAS_MAXIMAS_PARA_SEGUIR));
 console.log("\nJuegos pendientes o en curso de hasta 20 horas:");
 console.log("Encontrados:", filtrarJuegos(juegos, HORAS_MAXIMAS_ALTERNATIVAS));
 
+// SESION 8, RETO 1: ejecutar el ejercicio individual de la lista de la compra.
+ejecutarRetoListaCompra();
+
 // SESION 8, RETO 2: ejemplo de busqueda y recuento por genero.
 console.log("\nBusqueda de 'ISLA':");
 console.table(buscarPorTexto(juegos, "ISLA"));
 
 console.log("\nJuegos de aventura:", contarPorGenero(juegos, "aventura"));
-console.log("Generos distintos:", generosDistintos(juegos));
-console.log("Juegos por genero:", contarGenerosConMap(juegos));
 
 // SESION 8, RETO 3: ejemplo de estadisticas de horas jugadas.
 console.log("\nEstadisticas de horas jugadas:");
